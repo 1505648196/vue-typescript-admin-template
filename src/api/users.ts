@@ -13,7 +13,7 @@ export const getUserInfo = (data: any) =>
     method: 'post',
     data
   })
-
+//
 export const getUserByName = (username: string) =>
   request({
     url: `/users/${username}`,
