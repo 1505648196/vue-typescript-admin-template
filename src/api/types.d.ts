@@ -42,3 +42,23 @@ export interface IUserData {
   introduction: string
   roles: string[]
 }
+
+export interface Player{
+  id:number,
+  accountname:string,
+  nickname:string,
+  avatar:string,
+  level:number, //! 用户登记
+  exp:number, //! 用户经验值
+  rank:number, //! 排位赛段位
+  bravepoints:number,
+  winningstreak:number,
+  wanttoplay:Hero[]
+}
+export interface Hero{
+  id:number,
+  name:string,
+  icon: string,
+  classify:string[]
+}
+

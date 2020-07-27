@@ -33,14 +33,17 @@ app.use((req, res, next) => {
   next()
 })
 
+//todo读取api配置文件
 // Read and swagger config file
 const apiDefinition = yaml.load(path.resolve(__dirname, 'swagger.yml'))
+//todo 基于配置文件创建数据mock函数
 // Create mock functions based on swaggerConfig
 const options = {
   security: {
-    AccessTokenAuth: accessTokenAuth
+    AccessTokenAuth: accessTokenAuth   //权限认证
   }
 }
+//todo api 是路由定义
 const connectSwagger = connector(api, apiDefinition, options)
 connectSwagger(app)
 // Print swagger router api summary
