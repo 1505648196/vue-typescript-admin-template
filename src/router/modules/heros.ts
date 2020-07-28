@@ -16,7 +16,7 @@ export const playerRouter: RouteConfig ={
             name: 'PlayerList',
             meta:{               
                 title: 'playerList', //i18n信息需要额外处理
-                icon: 'gameplayer' //图标选取
+                icon: 'gameplayer' //图标选取1
             }
         }
     ]
