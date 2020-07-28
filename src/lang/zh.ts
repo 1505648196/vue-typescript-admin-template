@@ -1,6 +1,9 @@
 export default {
   route: {
     dashboard: '首页',
+    heroMgt: '英雄管理',
+    playerMgt: '玩家管理',
+    playerList: '玩家列表',
     documentation: '文档',
     guide: '引导页',
     permission: '权限测试页',

@@ -65,6 +65,24 @@ paths: #接口路径和定义
                  type: array
                  items:
                    $ref: "#/components/schemas/Player"
+    post: #在get后面增加一个post定义
+      tags: #所属标签
+        - players
+      operationId: createPlayer # 操作id，必要，映射到实现函数
+      summary: 新增玩家信息 # 概要
+      description: 创建玩家并返回创建玩家的数据 # 详细描述
+      # 描述参数信息
+      parameters:
+        - name: player
+          in: query # 参数位于哪里
+          description: 新建玩家数据
+          schema:
+            $ref: "#/components/schemas/Player"
+      responses:
+        200:
+          description: OK
+        401:
+          $ref: "#/components/responses/Unauthorized"
   /players/{id}: #多了一个参数
     get:
       tags:

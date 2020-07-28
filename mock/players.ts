@@ -85,6 +85,41 @@ import { heros } from './heros';
       })
     }
 
+    export const createPlayer = (req: Request,res: Response)=>{
+      const { player } = req.body
+      return res.json({
+        code:20000,
+        data:{
+          player
+        }
+      })
+    }
+
+    export const updatePlayer = (req:Request,res: Response) =>{
+      const { id } = req.params
+      const { player } = req.body
+      for (const v of playerList) {
+        if (v.id.toString()===id) {
+          return res.json({
+            code : 20000,
+            data:{
+              player
+            }
+          })
+        }
+      }
+      return res.json({
+        code:70001,
+        message:'player not found',
+      })
+    }
+
+    export const deletePlayer = (req: Request,res: Response)=>{
+      return res.json({
+        code:20000,
+      })
+    }
+
 
     
 
