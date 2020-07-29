@@ -6,7 +6,7 @@ import Router, { RouteConfig } from 'vue-router'
 import Layout from '@/layout/index.vue'
 
 /* Router modules */
-import { playerRouter } from './modules/heros';
+import { playerRoutes } from './modules/players'
 import componentsRouter from './modules/components'
 import chartsRouter from './modules/charts'
 import tableRouter from './modules/table'
@@ -103,7 +103,7 @@ export const constantRoutes: RouteConfig[] = [
   //   ]
   // },
 
-  playerRouter,
+  playerRoutes,
   {
     path: '/guide',
     component: Layout,

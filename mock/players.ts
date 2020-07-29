@@ -40,7 +40,8 @@ import { heros } from './heros';
     }
 
     export const getPlayers = (req: Request, res: Response) => {
-
+   
+      
       // 从查询参数中获取分页、过滤关键词等参数
       const { accountname, page = 1, limit = 10 }:any = req.query
     
@@ -60,7 +61,7 @@ import { heros } from './heros';
         code: 20000,
         data: {
           total: mockList.length,
-          players: pageList
+          players:pageList 
         }
       })
     }

@@ -1,25 +1,35 @@
-import { RouteConfig } from "vue-router";
-import Layout from "@/layout/index.vue";
+import { RouteConfig } from 'vue-router'
+import Layout from '@/layout/index.vue'
 
-export const playerRouter: RouteConfig ={
-    path: '/players',
-    component: Layout,
-    redirect:'/players/list',
-    meta:{
-        title:'playerMgt', //i8n信息需要额外处理
-        icon:'gameplayer'  //图标选取
+export const heroRoutes: RouteConfig = {
+  
+  path: '/heros',
+  component: Layout,
+  redirect: '/heros/list',
+  meta: {
+    title: 'heroMgt',
+    icon: 'qq'
+  },
+  children: [
+    {
+      path: 'banpick',
+      component: () => import('@/views/hero/banpick.vue'),
+      name: 'BanPick',
+      meta: {
+        title: 'banPick',
+        icon: 'like'
+      }
     },
-    children:[
-        {
-            path: 'list',
-            component: () => import ('@/views/player/list.vue'),
-            name: 'PlayerList',
-            meta:{               
-                title: 'playerList', //i18n信息需要额外处理
-                icon: 'gameplayer' //图标选取1
-            }
-        }
-    ]
-
-
+    {
+      path: 'banpick/:id',
+      component: () => import('@/views/hero/banpick-detail.vue'),
+      name: 'BanPickDetail',
+      meta: {
+        title: 'banPickDetail',
+        icon: 'chart',
+        activeMenu: '/heros/banpick',
+        hidden: true
+      }
+    }
+  ]
 }

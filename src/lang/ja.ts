@@ -64,6 +64,11 @@ export default {
     externalLink: '外部リンク',
     profile: 'プロフィール'
   },
+  player: {
+    accountname: 'ユーザーIDを入力してください。',
+    btnFilter: 'クエリー',
+    btnCreate: 'プレイヤーを追加'
+  },
   navbar: {
     dashboard: 'トップ',
     github: 'GitHub',
